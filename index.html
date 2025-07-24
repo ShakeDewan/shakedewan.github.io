@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aftaab Dewan - Ph.D. Physicist & Data Scientist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #2c3e50;
+            --primary-medium: #34495e;
+            --accent-blue: #3498db;
+            --accent-green: #27ae60;
+            --accent-purple: #8e44ad;
+            --accent-red: #c0392b;
+            --light-gray: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #ecf0f1;
+            --border-color: #dee2e6;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Enhanced Header with better typography */
+        .site-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+            color: var(--text-light);
+            padding: 80px 0 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.03"/><circle cx="20" cy="80" r="1" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+
+        .site-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            animation: slideInDown 1s ease;
+        }
+
+        .site-header .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-blue);
+            margin-bottom: 40px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+            animation: slideInUp 1s ease;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .contact-item svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--text-light);
+        }
+
+        /* Sticky Navigation with better styling */
+        .nav-menu {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            box-shadow: 0 2px 20px var(--shadow-color);
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 18px 30px;
+            text-decoration: none;
+            color: var(--primary-medium);
+            font-weight: 600;
+            font-family: var(--font-heading);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-blue);
+            background: #f8f9fa;
+            border-bottom-color: var(--accent-blue);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--accent-blue);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Enhanced Summary Section */
+        .summary-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px var(--shadow-color);
+            border-left: 5px solid var(--accent-blue);
+            font-size: 1.15rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, var(--accent-blue), #2980b9);
+            opacity: 0.05;
+            border-radius: 50%;
+            transform: translate(40px, -40px);
+        }
+
+        .summary-box p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Target Roles Cards */
+        .target-roles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .role-card {
+            background: linear-gradient(135deg, var(--accent-blue), #2980b9);
+            color: white;
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(52,152,219,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(-45deg);
+            transition: transform 0.6s ease;
+        }
+
+        .role-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(52,152,219,0.4);
+        }
+
+        .role-card:hover::before {
+            transform: rotate(-45deg) translate(50%, 50%);
+        }
+
+        .role-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .role-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Enhanced Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px var(--shadow-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(52,152,219,0.03), transparent);
+            transform: rotate(-45deg);
+            transition: transform 0.6s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .skill-category:hover::before {
+            transform: rotate(-45deg) translate(50%, 50%);
+        }
+
+        .skill-category h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--light-gray), #e9ecef);
+            color: var(--primary-medium);
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, var(--accent-blue), #2980b9);
+            color: white;
+            border-color: var(--accent-blue);
+            transform: scale(1.05);
+        }
+
+        /* Experience Items - Keeping the card style but improving it */
+        .experience-item {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px var(--shadow-color);
+            border-left: 5px solid var(--accent-green);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .company {
+            color: var(--accent-green);
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .duration {
+            background: linear-gradient(135deg, #ecf0f1, #d5dbdb);
+            color: var(--primary-dark);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.95rem;
+        }
+
+        .responsibilities li {
+            padding-left: 25px;
+            margin-bottom: 12px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: "▸";
+            color: var(--accent-blue);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .education-item {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px var(--shadow-color);
+            border-top: 5px solid var(--accent-purple);
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .degree {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .institution {
+            color: var(--accent-purple);
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .education-item .duration {
+            background: none;
+            padding: 0;
+            font-weight: 600;
+            color: #777;
+        }
+
+        /* Research Section */
+        .research-item {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px var(--shadow-color);
+            border-left: 4px solid var(--accent-red);
+            transition: all 0.3s ease;
+        }
+
+        .research-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .research-subsection-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-top: 40px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .research-subsection-title:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .site-header h1 {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+            
+            .nav-menu ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-menu a {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .target-roles {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Aftaab Dewan</h1>
+            <p class="subtitle">Ph.D. Physicist | Data Scientist | Machine Learning Engineer</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+                    <span>Washington, DC</span>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                    <span>aftaab.dewan@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                    <span>+1-413-559-9604</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <div class="container">
+            <ul>
+                <li><a href="#summary" data-section="summary">Summary</a></li>
+                <li><a href="#skills" data-section="skills">Skills</a></li>
+                <li><a href="#experience" data-section="experience">Experience</a></li>
+                <li><a href="#education" data-section="education">Education</a></li>
+                <li><a href="#research" data-section="research">Research</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="summary" class="content-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Professional Summary</h2>
+                <div class="summary-box fade-in">
+                    <p>Ph.D. physicist with deep expertise in Python, C++, and machine learning. Experienced in developing scalable simulations, handling 500+ GB datasets, and applying advanced data analysis techniques. Demonstrated success in high-impact research and startup environments, delivering efficient, real-world solutions. Proven ability to solve interdisciplinary problems, blending technical precision with strategic insight. Strong communicator with a collaborative mindset and leadership experience.</p>
+                </div>
+                
+                <div class="target-roles fade-in">
+                    <div class="role-card">
+                        <h4>Data Scientist</h4>
+                        <p>ML models, large datasets, predictive analytics</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Research Scientist</h4>
+                        <p>Advanced simulations, quantum systems, publications</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>ML Engineer</h4>
+                        <p>TensorFlow, scalable pipelines, optimization</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Quantitative Analyst</h4>
+                        <p>Mathematical modeling, Monte Carlo methods</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Technical Consultant</h4>
+                        <p>Interdisciplinary problems, strategic insight</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="content-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category fade-in">
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Mathematica</span>
+                            <span class="skill-tag">LaTeX</span>
+                            <span class="skill-tag">LISP</span>
+                            <span class="skill-tag">Java</span>
+                        </div>
+                    </div>
+                    <div class="skill-category fade-in">
+                        <h3>Libraries & Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">SciPy</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">LabVIEW</span>
+                        </div>
+                    </div>
+                    <div class="skill-category fade-in">
+                        <h3>Tools & Platforms</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Jupyter</span>
+                            <span class="skill-tag">Bash</span>
+                            <span class="skill-tag">Conda</span>
+                        </div>
+                    </div>
+                    <div class="skill-category fade-in">
+                        <h3>Areas of Expertise</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Numerical Simulations</span>
+                            <span class="skill-tag">Quantum Systems</span>
+                            <span class="skill-tag">Monte Carlo Methods</span>
+                            <span class="skill-tag">Large-Scale Data Processing</span>
+                            <span class="skill-tag">Optical Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="content-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Professional Experience</h2>
+                
+                <div class="experience-item fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Ph.D Research Intern</div>
+                            <div class="company">Lambda Function (Startup)</div>
+                        </div>
+                        <div class="duration">Current</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Built predictive ML models to optimize CNC machining, reducing setup complexity and improving efficiency</li>
+                        <li>Analyzed large-scale manufacturing datasets using Python and machine learning techniques</li>
+                        <li>Developed proof-of-concept pipelines for modernizing subtractive manufacturing workflows</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Graduate Research Assistant</div>
+                            <div class="company">Joint Quantum Institute (JQI), University of Maryland</div>
+                        </div>
+                        <div class="duration">2012–2023</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Designed and implemented high-performance numerical simulations of quantum systems using Python and C++</li>
+                        <li>Managed data pipelines processing over 500 GB of experimental data; automated analyses to speed up turnaround</li>
+                        <li>Developed optical systems and laser-locking electronics using LabVIEW, improving experimental precision</li>
+                        <li>Co-authored peer-reviewed publication in Physical Review A</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Founding Member, Graduate Student Committee</div>
+                            <div class="company">University of Maryland Physics Department</div>
+                        </div>
+                        <div class="duration">2014–2015</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Led exam prep and problem-solving sessions for math and physics courses; mentored diverse student cohorts</li>
+                        <li>Drove data-backed policy improvements by coordinating cross-stakeholder collaboration, enhancing graduate program outcomes</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Undergraduate Research Assistant</div>
+                            <div class="company">Amherst College</div>
+                        </div>
+                        <div class="duration">Summers 2009–2011</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Conducted Monte Carlo simulations of neutrino scattering events; contributed to senior thesis</li>
+                        <li>Built an automated drift correction system for laser alignment using LabVIEW and motorized optics</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Teaching Assistant & Tutor</div>
+                            <div class="company">Amherst College</div>
+                        </div>
+                        <div class="duration">2009–2012</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Led problem-solving sessions and exam reviews for physics and mathematics courses, tutoring diverse students at the Moss Quantitative Centre</li>
+                        <li>Collaborated with faculty to monitor high-need student progress, sharpening communication and mentorship skills</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="content-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Education</h2>
+                <div class="education-grid">
+                    <div class="education-item fade-in">
+                        <div class="degree">Ph.D., Physics</div>
+                        <div class="institution">University of Maryland, College Park</div>
+                        <div class="duration">July 2024</div>
+                        <p><strong>Dissertation:</strong> Ultracold Gases in a Two-Frequency Breathing Lattice</p>
+                    </div>
+                    <div class="education-item fade-in">
+                        <div class="degree">A.B., Physics and Mathematics, <em>cum laude</em></div>
+                        <div class="institution">Amherst College</div>
+                        <div class="duration">May 2012</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="content-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Research & Professional Activities</h2>
+                
+                <h3 class="research-subsection-title fade-in">Publications</h3>
+                <div class="research-item fade-in">
+                    <p>M. E. W. Reed, Z. S. Smith, <strong>Aftaab Dewan</strong>, and S. L. Rolston, "Griffiths Physics in an Ultracold Bose Gas," <em>Phys. Rev. A 99, 063611</em>, June 2019</p>
+                </div>
+
+                <h3 class="research-subsection-title fade-in">Presentations</h3>
+                <div class="research-item fade-in">
+                    <p>"An Acousto-Optical High Bandwidth Arbitrary Lattice Generator for 87Rb," 48th Annual Meeting of the APS Division of Atomic, Molecular and Optical Physics (DAMOP), 2017</p>
+                </div>
+
+                <h3 class="research-subsection-title fade-in">Awards & Honors</h3>
+                <div class="research-item fade-in"><p><strong>JQI Research Assistantship</strong>, 2012–2018</p></div>
+                <div class="research-item fade-in"><p><strong>Physics Stifler Prize</strong> (Excellence in Advanced Physics), 2012</p></div>
+                <div class="research-item fade-in"><p><strong>Physics Bassett Prize</strong> (Outstanding Introductory Physics), 2009</p></div>
+                <div class="research-item fade-in"><p><strong>Howard Hughes Fellow</strong> (Undergraduate Research), 2009</p></div>
+
+                <h3 class="research-subsection-title fade-in">Affiliations</h3>
+                <div class="research-item fade-in"><p><strong>Member, Sigma Xi</strong>, 2012–Present</p></div>
+                <div class="research-item fade-in"><p><strong>Volunteer, Amherst College Centre for Community Engagement</strong>, 2009–2012</p></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for Scroll Animations
+            const animationObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                animationObserver.observe(element);
+            });
+
+            // Intersection Observer for Active Nav Link (Scroll-Spy)
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            const sections = document.querySelectorAll('.content-section');
+
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.toggle('active', link.dataset.section === entry.target.id);
+                        });
+                    }
+                });
+            }, { rootMargin: '-30% 0px -70% 0px' });
+
+            sections.forEach(section => {
+                navObserver.observe(section);
+            });
+
+            // Handle navigation clicks for smooth scrolling
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
