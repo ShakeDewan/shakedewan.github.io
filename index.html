@@ -1,600 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shekhar (Shake) Dewan - Chief AI Officer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #ffffff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Section */
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-
-        .header .title {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Navigation */
-        .nav {
-            background: #f8f9fa;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            padding: 10px 15px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .nav a:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 60px 0;
-        }
-
-        .section {
-            margin-bottom: 80px;
-        }
-
-        .section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            text-align: center;
-            color: #333;
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            margin: 15px auto;
-            border-radius: 2px;
-        }
-
-        /* Executive Summary */
-        .summary {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            color: #555;
-        }
-
-        /* Key Strengths */
-        .strengths-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .strength-item {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .strength-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .strength-item h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        /* Experience */
-        .experience-item {
-            background: white;
-            border-left: 4px solid #667eea;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 0 10px 10px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .experience-item:hover {
-            transform: translateX(10px);
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .job-title {
-            flex: 1;
-        }
-
-        .job-title h3 {
-            color: #333;
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
-        .company {
-            color: #667eea;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .job-period {
-            background: #e9ecef;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: #666;
-            white-space: nowrap;
-        }
-
-        .job-description {
-            color: #555;
-            line-height: 1.7;
-        }
-
-        .job-description ul {
-            margin-top: 15px;
-            padding-left: 20px;
-        }
-
-        .job-description li {
-            margin-bottom: 8px;
-        }
-
-        /* Achievements */
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .achievement-item {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        /* Technical Skills */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .skill-category {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .skill-category h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            background: white;
-            color: #333;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            border: 1px solid #e9ecef;
-        }
-
-        /* Education */
-        .education-item {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-        }
-
-        .education-item h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .degree {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .education-details {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .job-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .section h2 {
-                font-size: 1.8rem;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Print styles */
-        @media print {
-            .nav { display: none; }
-            .header { background: #333 !important; }
-            .section { page-break-inside: avoid; }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1>Shekhar (Shake) Dewan</h1>
-            <p class="title">Chief AI Officer | CTO | Strategic AI Consultant</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span>Toronto, ON</span>
-                </div>
-                <div class="contact-item">
-                    <span>📞</span>
-                    <span>(647) 325-2965</span>
-                </div>
-                <div class="contact-item">
-                    <span>✉️</span>
-                    <span>shekhar.dewan@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <span>💼</span>
-                    <span>LinkedIn</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container">
-            <ul>
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#strengths">Key Strengths</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#skills">Technical Skills</a></li>
-                <li><a href="#education">Education</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            
-            <!-- Executive Summary -->
-            <section id="summary" class="section">
-                <h2>Executive Summary</h2>
-                <p class="summary">
-                    Accomplished AI expert with a strong record of combining technical innovation with strategic execution to drive revenue growth, operational efficiency, and product differentiation. Possesses deep expertise in natural language processing, with extensive experience delivering enterprise-grade AI solutions. Highly skilled at leading high-performing teams, securing executive buy-in, and rapidly converting emerging technologies into quantifiable business value.
-                </p>
-            </section>
-
-            <!-- Key Strengths -->
-            <section id="strengths" class="section">
-                <h2>Key Strengths</h2>
-                <div class="strengths-grid">
-                    <div class="strength-item">
-                        <h3>AI Strategy & Leadership</h3>
-                        <p>Expertise in developing and scaling comprehensive AI roadmaps</p>
-                    </div>
-                    <div class="strength-item">
-                        <h3>Deep Learning & NLP</h3>
-                        <p>Proficient in building and deploying advanced language models</p>
-                    </div>
-                    <div class="strength-item">
-                        <h3>Cloud & Data Engineering</h3>
-                        <p>Skilled in leveraging Docker, CI/CD pipelines, and GCP for scalable architectures</p>
-                    </div>
-                    <div class="strength-item">
-                        <h3>Technical Team Management</h3>
-                        <p>Experienced in leading agile teams to consistently deliver ahead of schedule</p>
-                    </div>
-                    <div class="strength-item">
-                        <h3>Enterprise Consulting</h3>
-                        <p>Adept at managing complex client engagements and negotiations</p>
-                    </div>
-                    <div class="strength-item">
-                        <h3>Data Visualization</h3>
-                        <p>Advanced skills in Tableau, Power BI, and Google Data Studio</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Professional Experience -->
-            <section id="experience" class="section">
-                <h2>Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">
-                            <h3>Chief AI Officer</h3>
-                            <p class="company">Hexona Systems, Toronto, ON</p>
-                        </div>
-                        <div class="job-period">March 2025 – Present</div>
-                    </div>
-                    <div class="job-description">
-                        <p>Develop and implement enterprise-wide AI strategies, translating advanced technical capabilities into business value and competitive advantage.</p>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">
-                            <h3>Founder & CEO</h3>
-                            <p class="company">AI Forward, Toronto</p>
-                        </div>
-                        <div class="job-period">Oct 2022 – Present</div>
-                    </div>
-                    <div class="job-description">
-                        <p>Deploying production grade AI solutions to SMBs. Focused on driving growth and operational efficiency. In a new phase of R&D, strictly confidential.</p>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">
-                            <h3>Data Science Consultant</h3>
-                            <p class="company">Deloitte, Toronto</p>
-                        </div>
-                        <div class="job-period">Jun 2021 – Oct 2022</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Served as the national leader for the NLP Center of Excellence, expanding the team to 20 practitioners</li>
-                            <li>Invited to lead the Conversational AI Community of Practice</li>
-                            <li>Led a key NLP deployment accelerator asset that reduced project timelines by 50% while enhancing overall engagement quality</li>
-                            <li>Negotiated a $500K pilot project to integrate AI-driven hiring solutions</li>
-                            <li>Achieved a Top 10 global ranking in the Tableau Iron Viz competition</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">
-                            <h3>Fractional Chief AI Officer</h3>
-                            <p class="company">Paperstack, Toronto</p>
-                        </div>
-                        <div class="job-period">Jan 2021 – Dec 2022</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Led AI initiatives for a Forbes 30 Under 30 startup, establishing a robust data architecture</li>
-                            <li>Built an analytics platform using Google Data Studio</li>
-                            <li>Demonstrated innovative AI work to Peter Norvig, Director of Research at Google, securing high-profile recognition</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">
-                            <h3>Additional Notable Roles</h3>
-                            <p class="company">Various Organizations</p>
-                        </div>
-                        <div class="job-period">2019 – 2020</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li><strong>Data Scientist, Statistics Canada:</strong> Developed a Flask application that interpreted financial statements with 92–97% accuracy</li>
-                            <li><strong>Deep Learning Summer Programmer, St. Francis Xavier University:</strong> Created ensembled 3D CNN pipelines for processing MRI data</li>
-                            <li><strong>Founder & Co-CTO, Greenmap:</strong> Built a platform linking barcode SKUs to ESG scores, driving an 80% increase in eco-friendly purchasing (Funded by the Reisman Startup Grant)</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Key Achievements -->
-            <section id="achievements" class="section">
-                <h2>Key Achievements</h2>
-                <div class="achievements-grid">
-                    <div class="achievement-item">
-                        Presented AI research at the Canadian AI Conference and directly to Google's leadership
-                    </div>
-                    <div class="achievement-item">
-                        Selected for prestigious accelerator programs including Google, TechStars, and OnDeck
-                    </div>
-                    <div class="achievement-item">
-                        Consistently secured repeat client engagements through high-ROI AI implementations
-                    </div>
-                </div>
-            </section>
-
-            <!-- Technical Expertise -->
-            <section id="skills" class="section">
-                <h2>Technical Expertise</h2>
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <h3>Programming & Frameworks</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">C#</span>
-                            <span class="skill-tag">TensorFlow</span>
-                            <span class="skill-tag">Keras</span>
-                            <span class="skill-tag">Scikit-learn</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Data Visualization</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Tableau (Top 10 Iron Viz)</span>
-                            <span class="skill-tag">Power BI</span>
-                            <span class="skill-tag">Google Data Studio</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>DevOps & Cloud</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">CI/CD Pipelines</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">GCP</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Focus Areas</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">NLP</span>
-                            <span class="skill-tag">Deep Learning</span>
-                            <span class="skill-tag">Computer Vision</span>
-                            <span class="skill-tag">AI Integrations</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Education & Certifications -->
-            <section id="education" class="section">
-                <h2>Education & Certifications</h2>
-                
-                <div class="education-item">
-                    <h3>Mount Allison University, Sackville, NB</h3>
-                    <div class="degree">B.A. in Computer Science & Mathematics (Honors)</div>
-                    <div class="degree">B.Sc. in Cognitive Science</div>
-                    <div class="education-details">
-                        <p><strong>Thesis:</strong> "Classifying Web Pages Using Deep Learning" (presented at the Canadian AI Conference)</p>
-                        <p><strong>Awards:</strong> President's Scholarship ($20K), Reisman Startup Grant ($15K), Academic Leadership</p>
-                    </div>
-                </div>
-
-                <div class="education-item">
-                    <h3>Professional Certifications</h3>
-                    <div class="education-details">
-                        <ul>
-                            <li>Deep Learning Specialization (Deeplearning.ai)</li>
-                            <li>Data Engineering with GCP Specialization (Google)</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
     <script>
-        // Smooth scrolling for navigation links
+    document.addEventListener('DOMContentLoaded', function () {
+        const header = document.getElementById('header');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const scrollIndicator = document.getElementById('scroll-indicator');
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Update scroll indicator
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            scrollIndicator.style.width = scrolled + '%';
+        });
+
+        // Mobile Menu Toggle
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars';
+            } else {
+                icon.className = 'fas fa-times';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!header.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuBtn.querySelector('i').className = 'fas fa-bars';
+            }
+        });
+
+        // FAQ Accordion
+        const faqAccordion = document.getElementById('faq-accordion');
+        if (faqAccordion) {
+            faqAccordion.addEventListener('click', function (e) {
+                const question = e.target.closest('.faq-question');
+                if (question) {
+                    // Close all other open answers
+                    faqAccordion.querySelectorAll('.faq-question').forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                        }
+                    });
+                    // Toggle the clicked question
+                    question.classList.toggle('active');
+                }
+            });
+        }
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -608,28 +71,1110 @@
             });
         });
 
-        // Add subtle scroll animations
+        // Add fade-in animation to elements when they come into view
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('fade-in-up');
                 }
             });
         }, observerOptions);
 
-        // Observe all sections for animations
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'all 0.6s ease';
-            observer.observe(section);
+        // Observe elements for animation
+        document.querySelectorAll('section > div').forEach(el => {
+            observer.observe(el);
         });
+
+        // Image lazy loading with loading animation
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+            img.addEventListener('load', () => {
+                img.classList.remove('image-loading');
+            });
+            img.addEventListener('error', () => {
+                img.classList.remove('image-loading');
+            });
+            if (!img.complete) {
+                img.classList.add('image-loading');
+            }
+        });
+
+        // Add hover sound effects (optional enhancement)
+        const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                // Could add subtle hover sound here if desired
+                btn.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Portfolio image modal functionality (simple version)
+        const portfolioImages = document.querySelectorAll('.masonry-gallery .relative');
+        portfolioImages.forEach(container => {
+            container.addEventListener('click', () => {
+                const img = container.querySelector('img');
+                if (img) {
+                    // Simple full-screen preview
+                    const modal = document.createElement('div');
+                    modal.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4';
+                    modal.innerHTML = `
+                        <div class="relative max-w-4xl max-h-full">
+                            <img src="${img.src}" alt="${img.alt}" class="max-w-full max-h-full object-contain rounded-lg">
+                            <button class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                    document.body.appendChild(modal);
+                    
+                    // Close modal functionality
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal || e.target.closest('button')) {
+                            document.body.removeChild(modal);
+                        }
+                    });
+                    
+                    // ESC key to close
+                    document.addEventListener('keydown', function closeModal(e) {
+                        if (e.key === 'Escape') {
+                            if (document.body.contains(modal)) {
+                                document.body.removeChild(modal);
+                            }
+                            document.removeEventListener('keydown', closeModal);
+                        }
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for hero section (subtle)
+        const hero = document.querySelector('section[style*="background-image"]');
+        if (hero) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                hero.style.transform = `translateY(${rate}px)`;
+            });
+        }
+
+        // Auto-hide mobile FAB when scrolling up
+        let lastScrollTop = 0;
+        const fab = document.querySelector('.fab-mobile');
+        if (fab) {
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    fab.style.transform = 'translateY(100px)';
+                } else {
+                    fab.style.transform = 'translateY(0)';
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+        }
+
+        // Add typing effect to hero title (subtle enhancement)
+        const heroTitle = document.querySelector('h1');
+        if (heroTitle) {
+            const originalText = heroTitle.textContent;
+            heroTitle.textContent = '';
+            let i = 0;
+            
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    heroTitle.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            };
+            
+            // Start typing effect after a short delay
+            setTimeout(typeWriter, 1000);
+        }
+
+        // Add number counter animation for success metrics
+        const counters = document.querySelectorAll('.success-metric .text-3xl');
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        if (counter.textContent.includes('+')) {
+                            counter.textContent = Math.ceil(current) + '+';
+                        } else if (counter.textContent.includes('%')) {
+                            counter.textContent = Math.ceil(current) + '%';
+                        } else if (counter.textContent.includes('⭐')) {
+                            counter.textContent = (current / 20).toFixed(1) + '⭐';
+                        } else {
+                            counter.textContent = Math.ceil(current);
+                        }
+                        setTimeout(updateCounter, 20);
+                    }
+                };
+                updateCounter();
+            });
+        };
+
+        // Trigger counter animation when metrics section is visible
+        const metricsSection = document.querySelector('.success-metric');
+        if (metricsSection) {
+            const metricsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        metricsObserver.unobserve(entry.target);
+                    }
+                });
+            });
+            metricsObserver.observe(metricsSection.parentElement);
+        }
+    });
     </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.M. Construction - Your Dream Home Builder in GTA</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="https://imconstructiongta.com/wp-content/uploads/2025/02/cropped-IM-03-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://imconstructiongta.com/wp-content/uploads/2025/02/cropped-IM-03-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://imconstructiongta.com/wp-content/uploads/2025/02/cropped-IM-03-180x180.png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3, .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Brand Colors */
+        .bg-brand-primary { background-color: #2E338A; }
+        .bg-brand-dark { background-color: #13131B; }
+        .bg-brand-gray { background-color: #4A4F69; }
+        .bg-brand-light-gray { background-color: #9B9A9A; }
+        .text-brand-primary { color: #2E338A; }
+        .text-brand-dark { color: #13131B; }
+        .border-brand-primary { border-color: #2E338A; }
+        
+        /* Button Styles */
+        .btn-primary { 
+            background-color: #2E338A; 
+            color: white; 
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover { 
+            background-color: #1f2460; 
+            transform: translateY(-2px);
+        }
+        .btn-secondary { 
+            background-color: #c39e73; 
+            color: white; 
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover { 
+            background-color: #b58f61; 
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Overlay */
+        .bg-dark-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(46, 51, 138, 0.8), rgba(19, 19, 27, 0.7));
+            z-index: 1;
+        }
+        .content-z { position: relative; z-index: 2; }
+        
+        /* Header Scroll Effect */
+        #header {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        #header:not(.scrolled) {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        #header:not(.scrolled) .header-link,
+        #header:not(.scrolled) .header-icon {
+            color: white;
+        }
+        #header:not(.scrolled) .header-link:hover {
+            color: #c39e73;
+        }
+        #header.scrolled .header-link {
+            color: #374151;
+        }
+        #header.scrolled .header-link:hover {
+            color: #2E338A;
+        }
+        
+        /* Problem/Solution Cards */
+        .problem-card {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+        .solution-card {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        .solution-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Masonry Portfolio */
+        .masonry-gallery {
+            column-count: 1;
+            column-gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .masonry-gallery { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .masonry-gallery { column-count: 3; }
+        }
+        .masonry-gallery img {
+            width: 100%;
+            height: auto;
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        .masonry-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* FAQ Accordion */
+        .faq-question.active + .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.25rem;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            padding-bottom: 0;
+        }
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Success Stories */
+        .success-metric {
+            background: linear-gradient(135deg, #2E338A, #4A4F69);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Loading animation for images */
+        .image-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #2E338A, #c39e73);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+        
+        /* Enhanced button hover effects */
+        .btn-primary, .btn-secondary {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before, .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .btn-primary:hover::before, .btn-secondary:hover::before {
+            left: 100%;
+        }
+        
+        /* Floating action button for mobile */
+        .fab-mobile {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .fab-mobile { display: block; }
+        }
+        
+        /* Enhanced testimonial card */
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-left: 4px solid #2E338A;
+        }
+        
+        /* Service card hover glow effect */
+        .service-card:hover {
+            box-shadow: 0 20px 40px rgba(46, 51, 138, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="https://imconstructiongta.com">
+                <img src="https://imconstructiongta.com/wp-content/uploads/2025/02/IM-03-1-e1739242668882.png" alt="I.M. Construction Logo" class="h-10 md:h-12">
+            </a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="https://imconstructiongta.com/" class="header-link font-medium transition-colors">Home</a>
+                <a href="https://imconstructiongta.com/services/" class="header-link font-medium transition-colors">Services</a>
+                <a href="https://imconstructiongta.com/portfolio/" class="header-link font-medium transition-colors">Portfolio</a>
+                <a href="https://imconstructiongta.com/contact-us/" class="header-link font-medium transition-colors">About</a>
+                <a href="tel:+14167257862" class="header-link font-medium border rounded-md px-4 py-2 text-sm transition-all hover:bg-white hover:text-brand-primary">
+                    Call: (416) 725-7862
+                </a>
+                <a href="https://imconstructiongta.com/contact-us/" class="btn-primary rounded-md px-6 py-2 text-sm font-semibold transition-all flex items-center gap-2">
+                    Get Free Quote <i class="fas fa-arrow-right"></i>
+                </a>
+            </nav>
+            <button id="menu-btn" class="md:hidden text-2xl header-icon transition-colors">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t mt-4 shadow-lg">
+            <a href="https://imconstructiongta.com/" class="block p-4 text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="https://imconstructiongta.com/services/" class="block p-4 text-gray-700 hover:bg-gray-100">Services</a>
+            <a href="https://imconstructiongta.com/portfolio/" class="block p-4 text-gray-700 hover:bg-gray-100">Portfolio</a>
+            <a href="https://imconstructiongta.com/contact-us/" class="block p-4 text-gray-700 hover:bg-gray-100">About</a>
+            <a href="tel:+14167257862" class="block p-4 text-gray-700 hover:bg-gray-100">Call: (416) 725-7862</a>
+            <a href="https://imconstructiongta.com/contact-us/" class="block p-4 bg-brand-primary text-white text-center font-semibold">Get Free Quote</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Scroll Progress Indicator -->
+        <div class="scroll-indicator" id="scroll-indicator"></div>
+        
+        <!-- Floating Action Button for Mobile -->
+        <a href="https://imconstructiongta.com/contact-us/" class="fab-mobile bg-brand-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-dark transition-colors">
+            <i class="fas fa-phone text-lg"></i>
+        </a>
+        <!-- Hero Section - StoryBrand Framework -->
+        <section class="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white bg-cover bg-center" style="background-image: url('https://imconstructiongta.com/wp-content/uploads/2025/02/IMG_1018-scaled.jpg');">
+            <div class="bg-dark-overlay"></div>
+            <div class="content-z max-w-4xl mx-auto px-4">
+                <!-- Clear Value Proposition -->
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight">
+                    Build Your Dream Project Without the Stress
+                </h1>
+                <p class="mt-6 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                    Stop worrying about delays, cost overruns, and poor craftsmanship. We deliver exceptional residential and commercial projects on time and on budget, so you can focus on what matters most.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://imconstructiongta.com/contact-us/" class="btn-primary rounded-lg px-8 py-4 text-lg font-bold flex items-center gap-3 shadow-xl">
+                        Get Your Free Quote <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+14167257862" class="border-2 border-white text-white rounded-lg px-8 py-4 text-lg font-bold flex items-center gap-3 hover:bg-white hover:text-brand-primary transition-all">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                <!-- Trust Indicators -->
+                <div class="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm opacity-90">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <span>5-Star Rated</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-shield-alt text-green-400"></i>
+                        <span>Fully Licensed & Insured</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-clock text-blue-400"></i>
+                        <span>15+ Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gray-800">
+                        Tired of Construction Nightmares?
+                    </h2>
+                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                        Most property owners face these common problems when building or renovating
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="problem-card text-white p-8 rounded-xl text-center">
+                        <i class="fas fa-exclamation-triangle text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-4">Project Delays</h3>
+                        <p>Contractors who don't show up, miss deadlines, and leave you waiting months longer than promised.</p>
+                    </div>
+                    <div class="problem-card text-white p-8 rounded-xl text-center">
+                        <i class="fas fa-dollar-sign text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-4">Budget Overruns</h3>
+                        <p>Hidden costs, surprise expenses, and final bills that are double your original estimate.</p>
+                    </div>
+                    <div class="problem-card text-white p-8 rounded-xl text-center">
+                        <i class="fas fa-hammer text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-4">Poor Quality</h3>
+                        <p>Shoddy workmanship, corners cut, and having to fix problems that should have been done right the first time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gray-800">
+                        Here's How We Solve These Problems
+                    </h2>
+                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                        Our proven 3-step process eliminates stress and delivers exceptional results
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="solution-card text-white p-8 rounded-xl text-center">
+                        <div class="bg-white text-brand-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                        <h3 class="text-2xl font-bold mb-4">Detailed Planning</h3>
+                        <p>We create comprehensive project plans with fixed timelines and transparent pricing—no surprises.</p>
+                    </div>
+                    <div class="solution-card text-white p-8 rounded-xl text-center">
+                        <div class="bg-white text-brand-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                        <h3 class="text-2xl font-bold mb-4">Quality Execution</h3>
+                        <p>Our skilled craftsmen deliver superior workmanship using premium materials and proven techniques.</p>
+                    </div>
+                    <div class="solution-card text-white p-8 rounded-xl text-center">
+                        <div class="bg-white text-brand-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                        <h3 class="text-2xl font-bold mb-4">Clear Communication</h3>
+                        <p>Regular updates, progress photos, and direct access to your project manager throughout the entire process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Authority Section -->
+        <section class="py-20 bg-brand-dark text-white">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold font-poppins mb-6">
+                            Why GTA Property Owners Trust I.M. Construction
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-brand-primary p-3 rounded-full flex-shrink-0">
+                                    <i class="fas fa-certificate text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">15+ Years of Excellence</h3>
+                                    <p class="text-gray-300">Hundreds of satisfied customers across the Greater Toronto Area with a track record of on-time, on-budget delivery for both residential and commercial projects.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-brand-primary p-3 rounded-full flex-shrink-0">
+                                    <i class="fas fa-tools text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Master Craftsmen</h3>
+                                    <p class="text-gray-300">Our team consists of skilled professionals who take pride in their work and attention to detail.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-brand-primary p-3 rounded-full flex-shrink-0">
+                                    <i class="fas fa-handshake text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Integrity & Transparency</h3>
+                                    <p class="text-gray-300">No hidden costs, no surprises. We believe in honest communication and fair pricing from start to finish.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://imconstructiongta.com/contact-us/" class="mt-8 inline-block btn-secondary rounded-lg px-8 py-4 font-bold text-lg">
+                            Get Your Free Consultation
+                        </a>
+                    </div>
+                    <div class="relative">
+                        <img src="https://imconstructiongta.com/wp-content/uploads/2025/02/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept-scaled.jpg" alt="I.M. Construction Team" class="rounded-xl shadow-2xl w-full">
+                        <div class="absolute -bottom-6 -right-6 bg-brand-primary text-white p-6 rounded-xl shadow-xl">
+                            <div class="text-3xl font-bold">100%</div>
+                            <div class="text-sm">Customer Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gray-800">Our Services</h2>
+                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                        From custom homes to commercial spaces, we deliver excellence in every build
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="service-card group relative min-h-[500px] rounded-xl overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" 
+                             style="background-image: url('https://imconstructiongta.com/wp-content/uploads/2025/02/photorealistic-wooden-house-with-timber-structure-2048x1365.jpg');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/90 transition-all duration-300"></div>
+                        <div class="relative z-10 p-8 h-full flex flex-col justify-end">
+                            <div class="bg-brand-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-home text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold font-poppins text-white mb-4 group-hover:text-yellow-300 transition-colors">Residential Construction</h3>
+                            <p class="text-gray-200 mb-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">Turn your dream home vision into reality with our residential construction services. Custom homes, renovations, additions, and complete makeovers.</p>
+                            <a href="https://imconstructiongta.com/services/" class="text-brand-primary bg-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors w-fit transform group-hover:scale-105">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="service-card group relative min-h-[500px] rounded-xl overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" 
+                             style="background-image: url('https://imconstructiongta.com/wp-content/uploads/2025/02/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept-scaled.jpg');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/90 transition-all duration-300"></div>
+                        <div class="relative z-10 p-8 h-full flex flex-col justify-end">
+                            <div class="bg-brand-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-building text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold font-poppins text-white mb-4 group-hover:text-yellow-300 transition-colors">Commercial Construction</h3>
+                            <p class="text-gray-200 mb-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">Professional commercial spaces that drive business success. Office build-outs, retail spaces, restaurants, and large-scale commercial projects.</p>
+                            <a href="https://imconstructiongta.com/services/" class="text-brand-primary bg-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors w-fit transform group-hover:scale-105">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="service-card group relative min-h-[500px] rounded-xl overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" 
+                             style="background-image: url('https://imconstructiongta.com/wp-content/uploads/2025/02/low-angle-shot-wooden-ceiling-cool-house-with-modern-minimalistic-interior-scaled.jpg');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/90 transition-all duration-300"></div>
+                        <div class="relative z-10 p-8 h-full flex flex-col justify-end">
+                            <div class="bg-brand-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-tools text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold font-poppins text-white mb-4 group-hover:text-yellow-300 transition-colors">General Contracting</h3>
+                            <p class="text-gray-200 mb-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">Complete project management from concept to completion. We handle permits, subcontractors, timelines, and quality control for any size project.</p>
+                            <a href="https://imconstructiongta.com/services/" class="text-brand-primary bg-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors w-fit transform group-hover:scale-105">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories / Portfolio -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gray-800">Success Stories</h2>
+                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                        See how we've transformed visions into reality for property owners across the GTA
+                    </p>
+                </div>
+                
+                <!-- Success Metrics -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                    <div class="success-metric text-white p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold mb-2">500+</div>
+                        <div class="text-sm">Projects Completed</div>
+                    </div>
+                    <div class="success-metric text-white p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold mb-2">98%</div>
+                        <div class="text-sm">On-Time Delivery</div>
+                    </div>
+                    <div class="success-metric text-white p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold mb-2">15+</div>
+                        <div class="text-sm">Years Experience</div>
+                    </div>
+                    <div class="success-metric text-white p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold mb-2">5⭐</div>
+                        <div class="text-sm">Average Rating</div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Gallery -->
+                <div class="masonry-gallery">
+                    <div class="relative group">
+                        <img loading="lazy" src="https://imconstructiongta.com/wp-content/uploads/2025/02/Hardwood-Floors-1024x667.jpg" alt="Custom Hardwood Flooring Installation" class="shadow-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 rounded-lg flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                                <i class="fas fa-search-plus text-2xl mb-2"></i>
+                                <p class="text-sm font-semibold">Hardwood Flooring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <img loading="lazy" src="https://imconstructiongta.com/wp-content/uploads/2025/02/photorealistic-wooden-house-with-timber-structure-2048x1365.jpg" alt="Modern Timber Frame Home" class="shadow-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 rounded-lg flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                                <i class="fas fa-search-plus text-2xl mb-2"></i>
+                                <p class="text-sm font-semibold">Timber Frame Home</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <img loading="lazy" src="https://imconstructiongta.com/wp-content/uploads/2025/02/house-8274529_1920-683x1024-1.jpg" alt="Contemporary Home Design" class="shadow-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 rounded-lg flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                                <i class="fas fa-search-plus text-2xl mb-2"></i>
+                                <p class="text-sm font-semibold">Contemporary Design</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <img loading="lazy" src="https://imconstructiongta.com/wp-content/uploads/2025/02/3d-rendering-modern-wood-stone-white-bathroom-scaled-1-1024x915.jpg" alt="Luxury Bathroom Renovation" class="shadow-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 rounded-lg flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                                <i class="fas fa-search-plus text-2xl mb-2"></i>
+                                <p class="text-sm font-semibold">Luxury Bathroom</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <img loading="lazy" src="https://imconstructiongta.com/wp-content/uploads/2025/02/3d-rendering-wooden-house-1024x574.jpg" alt="Custom Wooden House" class="shadow-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 rounded-lg flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                                <i class="fas fa-search-plus text-2xl mb-2"></i>
+                                <p class="text-sm font-semibold">Custom Home</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <img loading="lazy" src="https://imconstructiongta.com/wp-content/uploads/2025/02/Living-Area-1024x535.webp" alt="Modern Living Area Design" class="shadow-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 rounded-lg flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                                <i class="fas fa-search-plus text-2xl mb-2"></i>
+                                <p class="text-sm font-semibold">Living Area</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="https://imconstructiongta.com/portfolio/" class="btn-primary rounded-lg px-8 py-4 font-bold text-lg">
+                        View Complete Portfolio <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-bold font-poppins text-center text-gray-800 mb-16">What Our Clients Say</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    <div class="relative">
+                        <img loading="lazy" src="https://imconstructiongta.com/wp-content/uploads/2025/02/AIHozJKQ-6OaBmik8U7AIJzeyArl8iyPiW_7RqSZDfdvqwGNw8MKx3_UumNb-i7dYqORLNfkDKt_tU-YBY8Q0d2jSuobReHNqNd3ACVQzkWXy6OY6_XsR7hQw1UNsdR_EJs8c8fcsJQds1024.jpg" alt="Satisfied Client Kitchen Renovation" class="rounded-xl shadow-2xl w-full h-auto">
+                        <div class="absolute -top-4 -right-4 bg-yellow-400 text-black p-4 rounded-full shadow-xl">
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card bg-white p-8 rounded-xl shadow-lg">
+                        <div class="text-brand-primary text-6xl font-bold mb-4">"</div>
+                        <blockquote class="text-xl text-gray-700 italic mb-6 leading-relaxed">
+                            I hired Irshad for my kitchen renovation, and we couldn't be happier with the results! They were patient, professional, and truly respected my home throughout the process. Even when I made some changes during the job, they handled it without any complaints and with a great attitude. The workmanship and attention to detail were exceptional.
+                        </blockquote>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold">
+                                JS
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900">John Smith</p>
+                                <p class="text-sm text-gray-500">Residential Renovation Client</p>
+                                <div class="flex items-center gap-1 mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-2">5.0/5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Trust badges -->
+                        <div class="mt-6 pt-6 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">
+                            <span class="flex items-center gap-1">
+                                <i class="fas fa-certificate text-brand-primary"></i>
+                                Verified Client
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="fas fa-calendar text-brand-primary"></i>
+                                Project: 2024
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plan Section (The 3-Step Process) -->
+        <section class="py-20 bg-brand-dark text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold font-poppins">Your Path to the Perfect Build</h2>
+                    <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
+                        Our proven 3-step process makes building stress-free and ensures exceptional results
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                    <div class="text-center">
+                        <div class="bg-brand-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold">
+                            1
+                        </div>
+                        <h3 class="text-2xl font-bold font-poppins mb-4">Free Consultation & Quote</h3>
+                        <p class="text-gray-300 mb-6">We meet with you to understand your vision, assess your space, and provide a detailed, transparent quote with no hidden costs.</p>
+                        <div class="bg-brand-gray/30 p-4 rounded-lg">
+                            <p class="text-sm font-semibold">✓ In-home consultation</p>
+                            <p class="text-sm font-semibold">✓ Detailed project plan</p>
+                            <p class="text-sm font-semibold">✓ Fixed-price quote</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-brand-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold">
+                            2
+                        </div>
+                        <h3 class="text-2xl font-bold font-poppins mb-4">Design & Planning</h3>
+                        <p class="text-gray-300 mb-6">Our team creates detailed plans, secures permits, and schedules everything so your project runs smoothly from day one.</p>
+                        <div class="bg-brand-gray/30 p-4 rounded-lg">
+                            <p class="text-sm font-semibold">✓ Architectural plans</p>
+                            <p class="text-sm font-semibold">✓ Permit handling</p>
+                            <p class="text-sm font-semibold">✓ Timeline creation</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-brand-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold">
+                            3
+                        </div>
+                        <h3 class="text-2xl font-bold font-poppins mb-4">Expert Construction</h3>
+                        <p class="text-gray-300 mb-6">Our skilled craftsmen bring your vision to life while keeping you informed with regular updates and progress photos.</p>
+                        <div class="bg-brand-gray/30 p-4 rounded-lg">
+                            <p class="text-sm font-semibold">✓ Quality craftsmanship</p>
+                            <p class="text-sm font-semibold">✓ Regular updates</p>
+                            <p class="text-sm font-semibold">✓ Final walkthrough</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://imconstructiongta.com/contact-us/" class="btn-secondary rounded-lg px-10 py-5 font-bold text-xl">
+                        Start Your Project Today <i class="fas fa-arrow-right ml-3"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-4xl md:text-5xl font-bold font-poppins text-center text-gray-800 mb-16">Common Questions</h2>
+                <div id="faq-accordion" class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg hover:bg-gray-100 transition-colors">
+                            <span>How much will my project cost?</span>
+                            <i class="faq-icon fas fa-chevron-down transition-transform text-brand-primary"></i>
+                        </button>
+                        <div class="faq-answer text-gray-700 px-6">
+                            <p>Every project is unique, which is why we provide free, detailed consultations and transparent quotes. We'll assess your specific needs, space, and vision to give you an accurate, fixed-price estimate with no hidden costs. Most residential projects range from $50,000 to $500,000+ depending on scope and materials.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg hover:bg-gray-100 transition-colors">
+                            <span>How long will my project take?</span>
+                            <i class="faq-icon fas fa-chevron-down transition-transform text-brand-primary"></i>
+                        </button>
+                        <div class="faq-answer text-gray-700 px-6">
+                            <p>Timeline depends on project complexity, but we provide realistic schedules during consultation. Kitchen renovations typically take 3-6 weeks, bathroom renovations 2-4 weeks, custom homes 6-12 months, and commercial projects 2-8 months depending on size. We're committed to meeting our deadlines and keep you updated throughout.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg hover:bg-gray-100 transition-colors">
+                            <span>Are you licensed and insured?</span>
+                            <i class="faq-icon fas fa-chevron-down transition-transform text-brand-primary"></i>
+                        </button>
+                        <div class="faq-answer text-gray-700 px-6">
+                            <p>Absolutely! I.M. Construction is fully licensed, bonded, and insured. We carry comprehensive liability insurance and all necessary permits are handled by our team. Your project and property are fully protected throughout the construction process.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg hover:bg-gray-100 transition-colors">
+                            <span>What happens if there are changes during construction?</span>
+                            <i class="faq-icon fas fa-chevron-down transition-transform text-brand-primary"></i>
+                        </button>
+                        <div class="faq-answer text-gray-700 px-6">
+                            <p>We understand that visions can evolve during construction. We have a clear change order process that documents any modifications with transparent pricing and timeline adjustments. All changes are discussed and approved before implementation, so there are never any surprises.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg hover:bg-gray-100 transition-colors">
+                            <span>Do you offer warranties on your work?</span>
+                            <i class="faq-icon fas fa-chevron-down transition-transform text-brand-primary"></i>
+                        </button>
+                        <div class="faq-answer text-gray-700 px-6">
+                            <p>Yes! We stand behind our work with comprehensive warranties. Structural work comes with a 10-year warranty, general construction has a 2-year warranty, and we provide 1-year warranties on all finishes and fixtures. If any issues arise, we'll make it right.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-dark text-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl md:text-6xl font-bold font-poppins mb-6">
+                        Ready to Build Your Dream?
+                    </h2>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90">
+                        Stop waiting and start building. Get your free consultation and quote today—no obligation, no pressure, just honest advice from construction experts.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+                        <a href="https://imconstructiongta.com/contact-us/" class="bg-white text-brand-primary rounded-lg px-10 py-5 font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
+                            Get Your Free Quote <i class="fas fa-arrow-right ml-3"></i>
+                        </a>
+                        <a href="tel:+14167257862" class="border-2 border-white text-white rounded-lg px-10 py-5 font-bold text-xl hover:bg-white hover:text-brand-primary transition-all flex items-center gap-3">
+                            <i class="fas fa-phone"></i> Call: (416) 725-7862
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap justify-center items-center gap-8 text-sm opacity-75">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free consultation</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No obligation quote</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Same-day response</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400">
+        <div class="container mx-auto py-16 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div>
+                <img src="https://imconstructiongta.com/wp-content/uploads/2025/02/IM-03-1-e1739242668882.png" alt="I.M. Construction Logo" class="w-40 mb-4 brightness-0 invert">
+                <p class="text-sm mb-4">Building dreams into reality across the Greater Toronto Area with integrity, quality, and exceptional craftsmanship.</p>
+                <div class="flex items-center gap-2 text-sm">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <span>5.0 Rating • 500+ Projects</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-poppins font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://imconstructiongta.com/" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="https://imconstructiongta.com/services/" class="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="https://imconstructiongta.com/portfolio/" class="hover:text-white transition-colors">Portfolio</a></li>
+                    <li><a href="https://imconstructiongta.com/contact-us/" class="hover:text-white transition-colors">Get Free Quote</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-poppins font-semibold text-white mb-4">Contact Info</h4>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-phone text-brand-primary"></i>
+                        <a href="tel:+14167257862" class="hover:text-white transition-colors">+1 (416) 725-7862</a>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-brand-primary"></i>
+                        <a href="mailto:irshad@imconstructiongta.com" class="hover:text-white transition-colors">irshad@imconstructiongta.com</a>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-brand-primary"></i>
+                        <span>GTA, Ontario, Canada</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-poppins font-semibold text-white mb-4">Follow Us</h4>
+                <div class="flex space-x-4 mb-4">
+                    <a href="https://www.facebook.com/profile.php?id=61554082420975" class="w-10 h-10 bg-gray-800 hover:bg-brand-primary rounded-full flex items-center justify-center text-white transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/irshad-m-56434360/" class="w-10 h-10 bg-gray-800 hover:bg-brand-primary rounded-full flex items-center justify-center text-white transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <div class="text-xs">
+                    <p class="text-green-400 mb-1">✓ Licensed & Insured</p>
+                    <p class="text-green-400">✓ 15+ Years Experience</p>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800">
+            <div class="container mx-auto py-6 px-6 text-center text-xs text-gray-500">
+                <p>Copyright © 2025 I.M. Construction | All Rights Reserved | Powered by <a href="https://aiforward.ca/" class="hover:text-white underline">AI Forward</a></p>
+                <p class="mt-1">
+                    <a href="https://imconstructiongta.com/terms-and-conditions" class="hover:text-white underline">Terms and Conditions</a> | 
+                    <a href="https://imconstructiongta.com/privacy-policy" class="hover:text-white underline">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const header = document.getElementById('header');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ Accordion
+        const faqAccordion = document.getElementById('faq-accordion');
+        if (faqAccordion) {
+            faqAccordion.addEventListener('click', function (e) {
+                const question = e.target.closest('.faq-question');
+                if (question) {
+                    // Close all other open answers
+                    faqAccordion.querySelectorAll('.faq-question').forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                        }
+                    });
+                    // Toggle the clicked question
+                    question.classList.toggle('active');
+                }
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section > div').forEach(el => {
+            observer.observe(el);
+        });
+    });
+    </script>
+
 </body>
 </html>
