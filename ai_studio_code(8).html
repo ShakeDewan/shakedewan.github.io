@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Verification Meta Tags -->
+    <title>Shekhar (Shake) Dewan - AI Technology Leader</title>
+    <meta name="description" content="Portfolio of Shekhar (Shake) Dewan, an AI Technology Leader and Strategic Consultant driving AI innovation and organizational transformation.">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <!-- PASTE YOUR GOOGLE VERIFICATION TAG HERE. It will look like: <meta name="google-site-verification" content="YOUR_UNIQUE_CODE_HERE" /> -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --background: #f7f8fc;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --accent: #2563eb;
+            --accent-dark: #1d4ed8;
+            --surface: rgba(255, 255, 255, 0.7);
+            --border: #e5e7eb;
+            --border-hover: #d1d5db;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
+        /* --- Animated Background --- */
+        .aurora-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.05), transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(167, 119, 227, 0.05), transparent 40%);
+            animation: aurora 20s infinite alternate;
+        }
+
+        @keyframes aurora {
+            0% { transform: rotate(0deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1.5); }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Navigation --- */
+        .nav {
+            background: rgba(247, 248, 252, 0.6);
+            padding: 15px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav a:hover {
+            color: var(--text-primary);
+            background: rgba(0,0,0,0.05);
+        }
+
+        /* --- Header Section --- */
+        .header {
+            padding: 160px 0 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1.5px;
+            background: linear-gradient(45deg, #1f2937, #000000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header .title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            padding: 10px 20px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .contact-item:hover {
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* --- Main Content --- */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 15px auto 0;
+            border-radius: 2px;
+            opacity: 0.5;
+        }
+
+        /* --- Card Styles --- */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 35px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-hover);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Executive Summary */
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            padding: 40px;
+        }
+
+        /* Key Strengths */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .strength-item {
+            text-align: center;
+        }
+
+        .strength-item .icon {
+            width: 40px;
+            height: 40px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .strength-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .strength-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Professional Experience - Timeline */
+        .experience-layout {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 50px;
+        }
+
+        .timeline {
+            position: sticky;
+            top: 150px;
+            align-self: start;
+        }
+
+        .timeline-line {
+            width: 2px;
+            height: 100%;
+            background: var(--border);
+            position: absolute;
+            left: 5px;
+            top: 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            cursor: pointer;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-secondary);
+            margin-right: 20px;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .timeline-date {
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .timeline-item.active .timeline-dot {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        .timeline-item.active .timeline-date {
+            color: var(--accent);
+        }
+
+        .experience-item {
+            margin-bottom: 50px;
+        }
+        
+        .job-header {
+            margin-bottom: 15px;
+        }
+
+        .job-title h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .company {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .job-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .job-description ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        .job-description li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .job-description li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        .achievement-item {
+            text-align: center;
+            font-size: 1rem;
+        }
+        .achievement-item strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Technical Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .skill-tag {
+            background: rgba(0,0,0,0.05);
+            color: var(--text-secondary);
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* Education */
+        .education-item h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .degree {
+            font-weight: 500;
+            margin: 5px 0;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        .education-details {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .education-details strong {
+            color: var(--text-primary);
+        }
+        .education-item ul {
+            list-style-position: inside;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .header { padding: 100px 0 60px 0; }
+            .header h1 { font-size: 2.5rem; }
+            .header .title { font-size: 1.2rem; }
+            .profile-image { width: 120px; height: 120px; }
+            
+            .contact-info {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .contact-item {
+                justify-content: center;
+            }
+            .contact-phone, .contact-email {
+                grid-column: 1 / -1;
+            }
+
+            .nav { padding: 12px 0; }
+            .nav ul { gap: 5px; justify-content: space-around; }
+            .nav a { padding: 8px 10px; font-size: 0.85rem; }
+
+            .section h2 { font-size: 2rem; }
+
+            .experience-layout {
+                grid-template-columns: 1fr;
+            }
+            .timeline {
+                position: static;
+                display: flex;
+                overflow-x: auto;
+                padding-bottom: 20px;
+                margin-bottom: 30px;
+            }
+            .timeline-line { display: none; }
+            .timeline-item { flex-shrink: 0; }
+            .timeline-dot { display: none; }
+            .timeline-date {
+                padding: 8px 15px;
+                border: 1px solid var(--border);
+                border-radius: 50px;
+            }
+            .timeline-item.active .timeline-date {
+                background: var(--accent);
+                color: #fff;
+                border-color: var(--accent);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 { font-size: 2rem; white-space: normal; }
+            .contact-info { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="aurora-background"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#strengths">Strengths</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Highlights</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <img src="./profile-photo.jpg" alt="Shekhar Dewan" class="profile-image">
+            <h1>Shekhar (Shake) Dewan</h1>
+            <p class="title">AI Technology Leader & Strategic Consultant</p>
+            <p class="subtitle">Driving AI innovation and organizational transformation across enterprise and startup environments.</p>
+            <div class="contact-info">
+                <div class="contact-item contact-location"><span>📍</span><a href="#">Toronto, ON</a></div>
+                <div class="contact-item contact-linkedin"><span>💼</span><a href="https://www.linkedin.com/in/shake-dewan/" target="_blank">LinkedIn</a></div>
+                <div class="contact-item contact-phone"><span>📞</span><a href="tel:+16473252965">(647) 325-2965</a></div>
+                <div class="contact-item contact-email"><span>✉️</span><a href="mailto:shekhar.dewan@gmail.com">shekhar.dewan@gmail.com</a></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Executive Summary -->
+            <section id="summary" class="section">
+                <h2>Executive Summary</h2>
+                <div class="card summary">
+                    Proven AI technology leader who built and scaled Deloitte's national NLP Center of Excellence to 20 practitioners while delivering enterprise solutions with 50% faster deployment times. Successfully negotiated $500K+ in AI consulting contracts, achieved Top 10 global ranking in Tableau Iron Viz, and presented research directly to Google leadership. Currently scaling AI Forward's production solutions for SMBs while building toward executive leadership roles in AI innovation.
+                </div>
+            </section>
+
+            <!-- Key Strengths -->
+            <section id="strengths" class="section">
+                <h2>Key Strengths</h2>
+                <div class="strengths-grid">
+                    <div class="card strength-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15h8.25a7.5 7.5 0 000-15H10.5zM10.5 6H14m-3.5 0v15" /></svg>
+                        <h3>AI Strategy & Innovation</h3>
+                        <p>Developing AI roadmaps that align technical capabilities with business objectives.</p>
+                    </div>
+                    <div class="card strength-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V8.25a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 8.25v10.5A2.25 2.25 0 006.75 21z" /></svg>
+                        <h3>Deep Learning & NLP</h3>
+                        <p>Building and deploying advanced language models and neural networks.</p>
+                    </div>
+                    <div class="card strength-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962A3 3 0 013 11.175l-1.518.47a3 3 0 01-2.685-4.041l1.518-.47A3 3 0 016 4.44l1.518.47a3 3 0 014.042-2.685l.47-1.518a3 3 0 014.042 2.685l-.47 1.518a3 3 0 01-2.685 4.042l-1.518-.47a3 3 0 01-4.041 2.685l1.518.47z" /></svg>
+                        <h3>Technical Leadership</h3>
+                        <p>Building, mentoring, and leading high-performing technical teams in agile environments.</p>
+                    </div>
+                    <div class="card strength-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+                        <h3>Enterprise Consulting</h3>
+                        <p>Managing complex client relationships and translating technical concepts for stakeholders.</p>
+                    </div>
+                    <div class="card strength-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" /></svg>
+                        <h3>Cloud & Data Architecture</h3>
+                        <p>Designing scalable solutions using modern cloud platforms and DevOps practices.</p>
+                    </div>
+                    <div class="card strength-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
+                        <h3>Business Acumen</h3>
+                        <p>Driving ROI through strategic AI implementations and data-driven insights.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Experience -->
+            <section id="experience" class="section">
+                <h2>Professional Experience</h2>
+                <div class="experience-layout">
+                    <aside class="timeline">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-item active" data-target="exp-1"><div class="timeline-dot"></div><span class="timeline-date">2022-Present</span></div>
+                        <div class="timeline-item" data-target="exp-2"><div class="timeline-dot"></div><span class="timeline-date">2025-Present</span></div>
+                        <div class="timeline-item" data-target="exp-3"><div class="timeline-dot"></div><span class="timeline-date">2021-2022</span></div>
+                        <div class="timeline-item" data-target="exp-4"><div class="timeline-dot"></div><span class="timeline-date">2021-2022</span></div>
+                        <div class="timeline-item" data-target="exp-5"><div class="timeline-dot"></div><span class="timeline-date">2019-2020</span></div>
+                    </aside>
+                    <div class="experience-list">
+                        <div id="exp-1" class="card experience-item">
+                            <div class="job-header"><div class="job-title"><h3>Founder & CEO</h3><p class="company">AI Forward, Toronto</p></div></div>
+                            <div class="job-description"><p><strong>Scaling production-grade AI solutions for SMB market</strong> - Leading development and deployment of enterprise-quality AI systems focused on driving measurable growth and operational efficiency. Currently executing confidential R&D initiative exploring breakthrough AI applications with significant market potential.</p></div>
+                        </div>
+                        <div id="exp-2" class="card experience-item">
+                            <div class="job-header"><div class="job-title"><h3>Fractional Chief AI Officer</h3><p class="company">Hexona Systems, Toronto, ON</p></div></div>
+                            <div class="job-description"><p>Developing and implementing enterprise-wide AI strategies, translating advanced technical capabilities into measurable business outcomes and competitive advantage for growing technology company.</p></div>
+                        </div>
+                        <div id="exp-3" class="card experience-item">
+                            <div class="job-header"><div class="job-title"><h3>Senior Data Science Consultant & NLP Practice Leader</h3><p class="company">Deloitte, Toronto</p></div></div>
+                            <div class="job-description"><ul><li><strong>Built Deloitte's national NLP Center of Excellence from scratch</strong> - recruited, trained, and led 20 practitioners across Canada.</li><li><strong>Delivered $500K+ in new business</strong> - personally negotiated and executed complex AI pilot projects.</li><li><strong>Created proprietary NLP deployment accelerator</strong> - reduced client project timelines by 50%.</li><li><strong>Selected to lead Conversational AI Community of Practice</strong> - recognized expertise led to national leadership role.</li><li><strong>Achieved Top 10 global ranking in Tableau Iron Viz</strong> - demonstrating world-class data visualization skills.</li></ul></div>
+                        </div>
+                        <div id="exp-4" class="card experience-item">
+                            <div class="job-header"><div class="job-title"><h3>Fractional Chief AI Officer</h3><p class="company">Paperstack (Forbes 30 Under 30 Startup), Toronto</p></div></div>
+                            <div class="job-description"><ul><li><strong>Presented AI innovation directly to Peter Norvig</strong> - Google's Director of Research recognized and praised groundbreaking work.</li><li><strong>Architected enterprise-grade data infrastructure from ground up</strong> - built scalable analytics platform for rapid startup growth.</li><li><strong>Designed comprehensive business intelligence system</strong> - deployed Google Data Studio dashboards for real-time insights.</li></ul></div>
+                        </div>
+                        <div id="exp-5" class="card experience-item">
+                            <div class="job-header"><div class="job-title"><h3>Breakthrough Early Career Achievements</h3><p class="company">Government & Academic Institutions</p></div></div>
+                            <div class="job-description"><ul><li><strong>Statistics Canada:</strong> Delivered production Flask application achieving 92-97% accuracy in financial statement interpretation.</li><li><strong>St. Francis Xavier University:</strong> Pioneered ensembled 3D CNN architectures for medical MRI analysis.</li><li><strong>Greenmap (Co-Founder & CTO):</strong> Built ESG scoring platform, funded by prestigious $15K Reisman Startup Grant.</li></ul></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Achievements -->
+            <section id="achievements" class="section">
+                <h2>Career Highlights</h2>
+                <div class="achievements-grid">
+                    <div class="card achievement-item"><strong>Production AI Systems Deployment</strong><span>Built government-scale applications with 92-97% accuracy.</span></div>
+                    <div class="card achievement-item"><strong>Built Deloitte's NLP Practice</strong><span>Scaled to 20 practitioners, cutting delivery times by 50%.</span></div>
+                    <div class="card achievement-item"><strong>Google Leadership Recognition</strong><span>Presented AI research directly to Peter Norvig, Director of Research.</span></div>
+                    <div class="card achievement-item"><strong>Top 10 Global Data Viz Expert</strong><span>World-class ranking in Tableau Iron Viz among thousands.</span></div>
+                    <div class="card achievement-item"><strong>Serial Entrepreneur</strong><span>Co-founded 3 ventures with successful exits and $50K+ funding.</span></div>
+                    <div class="card achievement-item"><strong>Prestigious Program Selections</strong><span>Accepted into Google, TechStars, and OnDeck accelerators.</span></div>
+                </div>
+            </section>
+
+            <!-- Technical Expertise -->
+            <section id="skills" class="section">
+                <h2>Technical Expertise</h2>
+                <div class="skills-container">
+                    <div class="card skill-category">
+                        <h3>Programming & Frameworks</h3>
+                        <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">Java</span><span class="skill-tag">C#</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Keras</span><span class="skill-tag">Scikit-learn</span></div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3>Data Visualization</h3>
+                        <div class="skill-tags"><span class="skill-tag">Tableau (Top 10)</span><span class="skill-tag">Power BI</span><span class="skill-tag">Google Data Studio</span></div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3>DevOps & Cloud</h3>
+                        <div class="skill-tags"><span class="skill-tag">Docker</span><span class="skill-tag">CI/CD</span><span class="skill-tag">AWS</span><span class="skill-tag">GCP</span></div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3>AI Specializations</h3>
+                        <div class="skill-tags"><span class="skill-tag">NLP</span><span class="skill-tag">Deep Learning</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">AI Strategy</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education & Certifications -->
+            <section id="education" class="section">
+                <h2>Education & Certifications</h2>
+                <div class="card education-item">
+                    <h3>Mount Allison University, Sackville, NB</h3>
+                    <p class="degree">B.A. in Computer Science & Mathematics (Honors)</p>
+                    <p class="degree">B.Sc. in Cognitive Science</p>
+                    <div class="education-details">
+                        <p><strong>Thesis:</strong> "Classifying Web Pages Using Deep Learning" (presented at the Canadian AI Conference)</p>
+                        <p><strong>Awards:</strong> President's Scholarship ($20K), Reisman Startup Grant ($15K), Academic Leadership Recognition</p>
+                    </div>
+                </div>
+                <div class="card education-item">
+                    <h3>Professional Certifications</h3>
+                    <div class="education-details">
+                        <ul>
+                            <li>Deep Learning Specialization (Deeplearning.ai)</li>
+                            <li>Data Engineering with GCP Specialization (Google)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Intersection Observer for Animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Stagger animation for grid items
+                        if (entry.target.querySelector('.strengths-grid, .achievements-grid, .skills-container')) {
+                            const items = entry.target.querySelectorAll('.card');
+                            items.forEach((item, index) => {
+                                item.style.transitionDelay = `${index * 100}ms`;
+                            });
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Experience Timeline Interaction ---
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const experienceItems = document.querySelectorAll('.experience-item');
+
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetId = entry.target.id;
+                        timelineItems.forEach(item => {
+                            if (item.dataset.target === targetId) {
+                                item.classList.add('active');
+                            } else {
+                                item.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+
+            experienceItems.forEach(item => {
+                timelineObserver.observe(item);
+            });
+
+            timelineItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    document.querySelector(`#${item.dataset.target}`).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
