@@ -107,8 +107,8 @@ a {
 .logo {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .nav-links {
@@ -320,16 +320,44 @@ a {
   flex-direction: column;
 }
 
+.timeline-container {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 31px;
+  /* 20px padding + 11px half of 22px meta width roughly */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-color);
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .timeline-container {
+    padding-left: 10px;
+  }
+
+  .timeline-line {
+    left: 17px;
+  }
+}
+
 .exp-row {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 4rem;
   padding: 4rem 0;
-  border-top: 1px solid var(--border-color);
+  border-top: none;
+  /* Removed border in favor of timeline */
+  position: relative;
+  z-index: 2;
 }
 
 .exp-row:first-child {
-  border-top: none;
   padding-top: 1rem;
 }
 
@@ -345,6 +373,32 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  position: relative;
+  padding-left: 45px;
+}
+
+@media (max-width: 900px) {
+  .exp-meta {
+    padding-left: 35px;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: var(--text-primary);
+  border-radius: 50%;
+  left: 6px;
+  /* align with timeline-line */
+  top: 6px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 900px) {
+  .timeline-dot {
+    left: 1px;
+  }
 }
 
 .exp-date {
@@ -455,31 +509,32 @@ a {
   border-radius: 4px;
 }
 
-.edu-title {
-  font-size: 1.25rem;
+.edu-university {
+  font-size: 1.15rem;
   font-weight: 400;
-  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
 }
 
-.edu-details {
+.edu-details-strong {
   list-style: none;
   margin-bottom: 1.5rem;
 }
 
-.edu-details li {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
+.edu-details-strong li {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
 }
 
-.edu-award {
+.edu-award-muted {
   display: inline-block;
   font-size: 0.9rem;
-  padding: 6px 14px;
-  background-color: var(--accent-faint);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  color: var(--text-primary);
+  color: var(--text-muted);
+  border-left: 2px solid var(--border-color);
+  padding-left: 10px;
 }
 
 .cert-list {
@@ -546,4 +601,31 @@ a {
     gap: 2rem;
     text-align: center;
   }
+}
+
+/* =============== ANIMATIONS =============== */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-200 {
+  transition-delay: 200ms;
+}
+
+.site-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
