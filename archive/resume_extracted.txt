@@ -1,0 +1,61 @@
+SHEKHAR ( SHAKE )  DEWAN
+Toronto, ON | dewan.shekhar.99@gmail.com | +1 ( 437 )  430-4075 | linkedin.com/in/shekhar-dewan
+AI executive and founder who bridges technical execution and business strategy. Scaled enterprise AI teams to 20+ practitioners, generating
+$10M+ in new contracts. Architected data platforms that powered startups to $10M+ ARR. Endorsed for AI platform design by Google's Director of
+Research, Peter Norvig.
+Known for translating complex technical concepts into business value — equally effective in boardrooms and codebases. Builds foundational
+systems that scale, leads cross-functional teams that deliver, and shapes strategies where technical possibility meets business necessity.
+Core Expertise: AI Strategy | Product Management | Enterprise Sales & Consulting | NLP, CV, Deep Learning | Python, TensorFlow, AWS, GCP |
+Lean Six Sigma Black Belt
+Hexona Systems Toronto, ON Mar 2025 - Present
+Fractional Chief AI Officer
+A business automation and AI education platform with $1M+ in annual recurring revenue
+Serve as senior technology and AI strategist, reporting directly to the CEO.
+Architect automation playbooks and POC frameworks that accelerate enterprise adoption and improve sales conversion.
+Define market positioning strategy focused on measurable ROI as competitive differentiator in crowded AI landscape.
+Lead technical engagement in B2B sales cycles, including solution design and proof-of-value demonstrations.
+AI Forward Toronto, ON Oct 2022 - Present
+Founder & CEO
+AI Forward is a consultancy delivering production-grade AI solutions and advanced strategy to small and medium-sized businesses (SMBs).
+Built and scaled consultancy from ground up, securing 30+ client engagements through full-cycle business development.
+Lead team of 5 practitioners and 4 development partners, overseeing all aspects of solution scoping, architecture, and delivery.
+Serve as principal architect across the portfolio, delivering AI-powered automations, data pipelines, and custom applications.
+Manage P&L, client relationships, and strategic direction while maintaining hands-on technical leadership.
+Deloitte Toronto, ON Jun 2021 - Oct 2022
+AI Consultant
+A global professional services firm with 400,000+ employees and over $60B in annual revenue, providing audit, consulting, tax, and advisory services.
+National Lead for the NLP Center of Excellence, scaling to 20+ practitioners in under 18 months.
+Developed a flagship deployment accelerator that reduced project delivery timelines by 50% across multiple engagements.
+Standardized reusable solution assets, implementation playbooks, and quality assurance protocols.
+Contributed to $10M+ in new NLP contract value through technical pre-sales, solution architecture, and strategic POV demonstrations.
+Paperstack Toronto, ON Jun 2021 - Dec 2022
+Fractional Chief AI Officer
+Paperstack is a Forbes 30 Under 30-founded e-commerce and fintech startup that has grown to over $10M in ARR.
+Owned the entire AI function, reporting directly to the CEO.
+Architected the end-to-end data platform enabling real-time analytics that supported strategic pivot and expansion to $10M ARR.
+Presented AI innovations to Google's Director of Research, Peter Norvig, earning direct product endorsement.
+SUMMARY
+PROFESSIONAL EXPERIENCE
+PFES Fredericton, NB Jan 2021 - Jun 2021
+AI Engineer & Consultant
+PFES is a consulting firm specializing in forestry and environmental sciences.
+Led AI development initiatives as principal technical resource.
+Developed a novel AI model using LiDAR and GIS data that automated forest inventory analysis, reducing processing time by 40%.
+Built interactive dashboards and decision support systems for bioenergy and risk assessment, adopted by government agencies and industry
+partners.
+STATISTICS CANADA Ottawa, ON Sep 2020 - Dec 2020
+Data Scientist (Contract)
+Canada's national statistical agency with 5,000+ employees and a $600M+ annual budget.
+Co-led COVID-19 supply chain monitoring initiative, producing weekly inventory intelligence for Health Canada's national response.
+Developed Flask-based analytics application processing financial datasets with 92-97% accuracy, reducing manual reporting burden and
+improving decision reliability.
+Mount Allison University Sackville, NB
+BA (Hons) Computer Science & Mathematics May 2020
+Mount Allison University Sackville, NB
+BSc Cognitive Science May 2020
+Machine Learning Specialization | Stanford Online
+Data Engineering with GCP Specialization | Google Cloud
+Deep Learning Specialization | deeplearning.ai
+Lean Six Sigma Black Belt | Six Sigma Academy Amsterdam
+EDUCATION
+CERTIFICATIONS & PROFESSIONAL DEVELOPMENT
