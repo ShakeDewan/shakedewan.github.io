@@ -1,0 +1,10 @@
+{
+    "articles": [
+        {
+            "slug": "01-introduction",
+            "title": "Bridging the Gap: Why Technical Excellence Isn't Enough in AI",
+            "date": "February 20, 2026",
+            "summary": "Exploring the bottleneck in enterprise AI: connecting technical capabilities to actual business ROI and navigating change management."
+        }
+    ]
+}
