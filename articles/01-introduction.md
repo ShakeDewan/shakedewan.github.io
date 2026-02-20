@@ -6,9 +6,9 @@ When I started at Deloitte building out the NLP Center of Excellence, a recurrin
 
 Why? Because companies treat AI as a silver bullet instead of a lever. 
 
-### The Theory of Constraints in the Age of LLMs
+### Systems Thinking in the Age of LLMs
 
-I approach AI implementation through the lens of the **Theory of Constraints** and **Lean Six Sigma**. If you deploy an incredible, state-of-the-art LLM to optimize a process that is *not* your business's primary bottleneck, your overall throughput will not change. You have simply made a non-critical step faster, causing work to pile up at the actual constraint.
+I approach AI implementation through the lens of **systems thinking** and **process optimization**. If you deploy an incredible, state-of-the-art LLM to optimize a process that is *not* your business's primary bottleneck, your overall throughput will not change. You have simply made a non-critical step faster, causing work to pile up at the actual constraint.
 
 The reality of scaling these systems inside an enterprise is far messier than a compelling demo. It involves:
 - **Identifying the True Bottleneck**: Where is value actually getting stuck? 
