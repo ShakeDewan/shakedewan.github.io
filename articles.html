@@ -21,8 +21,11 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="index.css">
 
+    <!-- Marked.js -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- Custom JS -->
     <script src="index.js" defer></script>
+    <script src="articles.js" defer></script>
 </head>
 
 <body>
@@ -34,34 +37,11 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="resume.html" class="nav-link">Resume</a></li>
                 <li><a href="articles.html" class="nav-link active">Articles</a></li>
-                <li><a href="book.html" class="nav-link">Book</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
-        <!-- Hero Section -->
-        <header class="hero" style="text-align: center; border-bottom: none; padding-bottom: 2rem;">
-            <div class="hero-content" style="justify-content: center; text-align: center;">
-                <div class="hero-text" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <h1 class="hero-title">Insights & Articles</h1>
-                    <p class="hero-subtitle">Thoughts on AI strategy, engineering, and startups.</p>
-                    <p class="hero-description" style="margin: 0 auto 3rem auto;">
-                        I am currently curating a collection of articles diving deep into production-grade AI
-                        applications, my learnings scaling teams at Deloitte, and the future of enterprise automation.
-                        Check back soon.
-                    </p>
-                    <div class="hero-actions" style="justify-content: center;">
-                        <a href="index.html" class="btn btn-secondary">
-                            <i class="ti ti-arrow-left"></i> Back to Home
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-
-
+    <main id="articles-main" class="container" style="min-height: 70vh;">
     </main>
 
     <footer class="footer">
