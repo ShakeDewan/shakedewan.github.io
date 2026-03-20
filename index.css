@@ -564,6 +564,131 @@ h3 {
   color: var(--ink-soft);
 }
 
+.subpage-hero {
+  padding: 48px 0 24px;
+}
+
+.subpage-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.subpage-copy,
+.summary-card,
+.resume-role,
+.capability-card,
+.media-card {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(12px);
+}
+
+.subpage-copy,
+.summary-card,
+.capability-card,
+.media-card {
+  border-radius: 30px;
+  padding: 28px;
+}
+
+.subpage-copy h1 {
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  margin-bottom: 18px;
+  max-width: 12ch;
+}
+
+.subpage-side {
+  display: grid;
+  gap: 18px;
+}
+
+.resume-timeline {
+  display: grid;
+  gap: 18px;
+}
+
+.resume-role {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 24px;
+  border-radius: 30px;
+  padding: 28px;
+}
+
+.resume-role-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resume-role-date,
+.resume-role-location,
+.resume-role-company {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.resume-role-body h3 {
+  margin-bottom: 8px;
+}
+
+.resume-role-company {
+  margin-bottom: 12px;
+}
+
+.resume-bullets {
+  margin-top: 14px;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.resume-bullets li {
+  color: var(--ink-soft);
+}
+
+.resume-bullets.compact {
+  margin-top: 10px;
+}
+
+.capability-grid,
+.media-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.capability-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.media-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tag-cloud,
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.bento-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.92);
+  border: 1px solid rgba(20, 33, 61, 0.09);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
 .section-reveal {
   opacity: 0;
   transform: translateY(26px);
@@ -589,15 +714,19 @@ h3 {
   }
 
   .hero-grid,
+  .subpage-hero-grid,
   .split-layout,
   .timeline-panel,
-  .final-cta {
+  .final-cta,
+  .resume-role {
     grid-template-columns: 1fr;
   }
 
   .proof-strip,
   .service-grid,
-  .authority-grid {
+  .authority-grid,
+  .capability-grid,
+  .media-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -645,7 +774,9 @@ h3 {
 
   .proof-strip,
   .service-grid,
-  .authority-grid {
+  .authority-grid,
+  .capability-grid,
+  .media-grid {
     grid-template-columns: 1fr;
   }
 
