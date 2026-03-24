@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://shakedewan.github.io/sitemap.xml

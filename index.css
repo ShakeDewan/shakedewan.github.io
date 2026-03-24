@@ -20,8 +20,8 @@
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 14px;
-  --font-sans: "Manrope", sans-serif;
-  --font-display: "Fraunces", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Newsreader", serif;
 }
 
 *,
@@ -40,8 +40,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: var(--font-sans);
+  font-size: 1.04rem;
   color: var(--ink);
-  line-height: 1.6;
+  line-height: 1.68;
+  font-optical-sizing: auto;
   background:
     radial-gradient(circle at top left, rgba(255, 212, 176, 0.48), transparent 28%),
     radial-gradient(circle at bottom right, rgba(29, 95, 103, 0.12), transparent 32%),
@@ -82,14 +84,17 @@ h2,
 h3,
 h4 {
   margin: 0;
-  line-height: 1.05;
+  line-height: 1.02;
   color: var(--ink);
   font-family: var(--font-display);
+  font-weight: 600;
+  text-wrap: balance;
 }
 
 p {
   margin: 0;
   color: var(--ink-soft);
+  text-wrap: pretty;
 }
 
 ul {
@@ -219,6 +224,7 @@ ul {
 }
 
 .brand-name {
+  font-family: var(--font-sans);
   font-weight: 700;
   color: var(--ink);
 }
@@ -420,6 +426,8 @@ main {
 .section-title {
   font-size: clamp(2.35rem, 4.8vw, 4.4rem);
   letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 0.96;
 }
 
 .section-copy {
@@ -507,11 +515,15 @@ main {
   font-size: clamp(3.3rem, 7vw, 6rem);
   max-width: 11ch;
   letter-spacing: -0.035em;
+  font-weight: 600;
+  line-height: 0.92;
 }
 
 .page-title {
   font-size: clamp(2.8rem, 5vw, 4.8rem);
   letter-spacing: -0.03em;
+  font-weight: 600;
+  line-height: 0.95;
 }
 
 .lead {
@@ -849,6 +861,10 @@ main {
   border-radius: 30px;
 }
 
+.stack-top-18 {
+  margin-top: 18px;
+}
+
 .support-panel h3 {
   font-size: 1.45rem;
 }
@@ -901,6 +917,12 @@ main {
 .article-view {
   max-width: 860px;
   margin: 0 auto;
+}
+
+.article-header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
 }
 
 .article-header p {
@@ -975,6 +997,11 @@ main {
 
 .footer {
   padding: 10px 0 38px;
+}
+
+.error-shell {
+  max-width: 780px;
+  margin: 48px auto 0;
 }
 
 .footer-cta {
