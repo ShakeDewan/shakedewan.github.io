@@ -1,82 +1,195 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    const mainContent = document.getElementById('articles-main');
-    if (!mainContent) return;
+const escapeHtml = (value) =>
+  value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const postSlug = urlParams.get('post');
+const renderInlineMarkdown = (text) => {
+  let rendered = escapeHtml(text);
+  rendered = rendered.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  rendered = rendered.replace(/\*(.+?)\*/g, "<em>$1</em>");
+  return rendered;
+};
+
+const renderMarkdown = (markdown) => {
+  const lines = markdown.split("\n");
+  const html = [];
+  let inList = false;
+
+  const closeList = () => {
+    if (inList) {
+      html.push("</ul>");
+      inList = false;
+    }
+  };
+
+  lines.forEach((line) => {
+    const trimmed = line.trim();
+
+    if (!trimmed) {
+      closeList();
+      return;
+    }
+
+    if (trimmed.startsWith("### ")) {
+      closeList();
+      html.push(`<h3>${renderInlineMarkdown(trimmed.slice(4))}</h3>`);
+      return;
+    }
+
+    if (trimmed.startsWith("## ")) {
+      closeList();
+      html.push(`<h2>${renderInlineMarkdown(trimmed.slice(3))}</h2>`);
+      return;
+    }
+
+    if (trimmed.startsWith("# ")) {
+      closeList();
+      html.push(`<h1>${renderInlineMarkdown(trimmed.slice(2))}</h1>`);
+      return;
+    }
+
+    if (trimmed.startsWith("- ")) {
+      if (!inList) {
+        html.push("<ul>");
+        inList = true;
+      }
+      html.push(`<li>${renderInlineMarkdown(trimmed.slice(2))}</li>`);
+      return;
+    }
+
+    closeList();
+    html.push(`<p>${renderInlineMarkdown(trimmed)}</p>`);
+  });
+
+  closeList();
+  return html.join("");
+};
+
+const renderArticleMeta = (article) => {
+  const parts = [article.topic, article.readingTime, article.date].filter(Boolean);
+  return parts.map((part) => `<span>${escapeHtml(part)}</span>`).join("");
+};
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const mainContent = document.getElementById("articles-main");
+  if (!mainContent) {
+    return;
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const postSlug = urlParams.get("post");
+
+  try {
+    const response = await fetch("articles/articles.json");
+    if (!response.ok) {
+      throw new Error("Unable to load article index");
+    }
+
+    const data = await response.json();
+    const articles = Array.isArray(data.articles) ? data.articles : [];
 
     if (postSlug) {
-        // Load single post
-        try {
-            const response = await fetch(`articles/${postSlug}.md`);
-            if (!response.ok) throw new Error('Post not found');
-            const markdown = await response.text();
+      const article = articles.find((item) => item.slug === postSlug);
 
-            mainContent.innerHTML = `
-                <div class="article-container" style="max-width: 800px; margin: 0 auto; padding: 4rem 20px;">
-                    <a href="articles.html" style="color: var(--accent); margin-bottom: 2rem; display: inline-block;">&larr; Back to Articles</a>
-                    <div class="markdown-body">
-                        ${marked.parse(markdown)}
-                    </div>
-                </div>
-            `;
-        } catch (error) {
-            mainContent.innerHTML = `
-                <div style="text-align:center; padding: 10rem 20px;">
-                    <h2>Post not found</h2>
-                    <br>
-                    <a href="articles.html" class="btn btn-secondary"><i class="ti ti-arrow-left"></i> Back to articles</a>
-                </div>
-            `;
-        }
-    } else {
-        // Load index
-        try {
-            const response = await fetch('articles/articles.json');
-            const data = await response.json();
+      if (!article) {
+        throw new Error("Post not found");
+      }
 
-            let html = `
-                <header class="hero" style="text-align: center; border-bottom: none; padding-top: 4rem; padding-bottom: 2rem;">
-                    <div class="hero-text" style="max-width: 800px; margin: 0 auto;">
-                        <h1 class="hero-title">Insights & Articles</h1>
-                        <p class="hero-subtitle">Thoughts on AI strategy, engineering, and startups.</p>
-                    </div>
-                </header>
-                <div class="articles-grid" style="display: flex; flex-direction: column; gap: 2rem; max-width: 800px; margin: 0 auto; padding: 0 20px 6rem 20px;">
-            `;
+      const markdownResponse = await fetch(`articles/${postSlug}.md`);
+      if (!markdownResponse.ok) {
+        throw new Error("Post not found");
+      }
 
-            if (data.articles.length === 0) {
-                html += `<p style="text-align: center; color: var(--text-secondary);">No articles published yet.</p>`;
-            } else {
-                data.articles.forEach(article => {
-                    html += `
-                        <div class="edu-card" style="margin: 0; display: block; text-decoration: none; transition: transform 0.2s; cursor: pointer;" onclick="window.location='articles.html?post=${article.slug}'">
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">${article.date}</span>
-                            <h3 style="font-size: 1.5rem; margin: 0.5rem 0; color: var(--text-primary); transition: color 0.2s;">${article.title}</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: 1rem;">${article.summary}</p>
-                            <span style="color: var(--accent); font-weight: 500;">Read more &rarr;</span>
-                        </div>
-                    `;
-                });
-            }
-
-            html += `</div>`;
-            mainContent.innerHTML = html;
-
-            // Add hover effect for cards via JS to keep it simple since styles are inline
-            document.querySelectorAll('.edu-card').forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.borderColor = 'var(--text-primary)';
-                    card.querySelector('h3').style.color = 'var(--accent)';
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.borderColor = 'var(--border-color)';
-                    card.querySelector('h3').style.color = 'var(--text-primary)';
-                });
-            });
-
-        } catch (error) {
-            mainContent.innerHTML = `<div style="text-align:center; padding: 10rem 20px;"><h2>Error loading articles</h2><p style="color: var(--text-secondary);">Please try again later.</p></div>`;
-        }
+      const markdown = await markdownResponse.text();
+      document.title = `${article.title} | Shake Dewan`;
+      mainContent.innerHTML = `
+        <article class="article-view section-reveal active">
+          <a href="articles.html" class="article-back">&larr; Back to articles</a>
+          <header class="article-header">
+            <p class="eyebrow">Article</p>
+            <h2>${escapeHtml(article.title)}</h2>
+            <div class="article-meta">${renderArticleMeta(article)}</div>
+            <p>${escapeHtml(article.summary)}</p>
+          </header>
+          <div class="markdown-body">
+            ${renderMarkdown(markdown)}
+          </div>
+          <div class="article-actions">
+            <a href="case-studies.html" class="btn btn-secondary">See the case studies</a>
+            <a href="https://cal.com/shake-dewan/30min" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary">Book a Call</a>
+          </div>
+        </article>
+      `;
+      return;
     }
+
+    if (articles.length === 0) {
+      mainContent.innerHTML = `
+        <div class="article-view section-reveal active">
+          <p class="eyebrow">Writing</p>
+          <h2>No articles published yet.</h2>
+          <p>The article archive will grow over time. For now, the homepage and case studies carry the strongest proof.</p>
+        </div>
+      `;
+      return;
+    }
+
+    const featured = articles.find((article) => article.featured) || articles[0];
+    const remainingArticles = articles.filter((article) => article.slug !== featured.slug);
+
+    const featureMarkup = `
+      <article class="article-feature section-reveal active">
+        <p class="eyebrow">Featured Essay</p>
+        <h2>${escapeHtml(featured.title)}</h2>
+        <p>${escapeHtml(featured.summary)}</p>
+        <div class="article-meta">${renderArticleMeta(featured)}</div>
+        <div class="hero-actions">
+          <a href="articles.html?post=${encodeURIComponent(featured.slug)}" class="btn btn-primary">Read the featured article</a>
+          <a href="case-studies.html" class="btn btn-ghost">Case studies</a>
+        </div>
+      </article>
+    `;
+
+    const cardsMarkup =
+      remainingArticles.length > 0
+        ? remainingArticles
+            .map(
+              (article) => `
+                <article class="article-card section-reveal">
+                  <div class="article-kicker">${renderArticleMeta(article)}</div>
+                  <h3>${escapeHtml(article.title)}</h3>
+                  <p>${escapeHtml(article.summary)}</p>
+                  <a href="articles.html?post=${encodeURIComponent(article.slug)}" class="route-link">Read article</a>
+                </article>
+              `
+            )
+            .join("")
+        : `
+          <article class="article-card section-reveal">
+            <div class="article-kicker"><span>Archive</span></div>
+            <h3>More writing is on the way.</h3>
+            <p>The archive is intentionally small for now. Quality beats volume, and each new essay should deepen the authority platform.</p>
+            <a href="case-studies.html" class="route-link">Review the case studies</a>
+          </article>
+        `;
+
+    mainContent.innerHTML = `
+      ${featureMarkup}
+      <div class="article-grid">
+        ${cardsMarkup}
+      </div>
+    `;
+  } catch (error) {
+    mainContent.innerHTML = `
+      <div class="article-view section-reveal active">
+        <p class="eyebrow">Articles</p>
+        <h2>There was a problem loading the archive.</h2>
+        <p>Please try again later.</p>
+      </div>
+    `;
+  }
 });

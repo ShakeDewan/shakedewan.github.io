@@ -1,62 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shake Dewan | AI Executive & Founder</title>
+    <title>Shake Dewan | Articles</title>
     <meta name="description"
-        content="Portfolio of Shake Dewan, an AI Technology Leader and Strategic Consultant driving AI innovation and organizational transformation.">
-
-    <!-- Google Fonts: Inter and Outfit -->
+        content="Articles and essays from Shake Dewan on enterprise AI, delivery discipline, strategy, and the realities of practical adoption.">
+    <meta name="theme-color" content="#172033">
+    <meta property="og:title" content="Shake Dewan | Articles">
+    <meta property="og:description"
+        content="Essays on enterprise AI, adoption discipline, systems thinking, and business reality.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="1722140131390.jpeg">
+    <link rel="icon" href="1722140131390.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Tabler Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="index.css">
-
-    <!-- Marked.js -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- Custom JS -->
     <script src="index.js" defer></script>
     <script src="articles.js" defer></script>
 </head>
-
 <body>
-    <div class="site-glow"></div>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">SD.</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="resume.html" class="nav-link">Resume</a></li>
-                <li><a href="articles.html" class="nav-link active">Articles</a></li>
-                <li><a href="media.html" class="nav-link">Media</a></li>
-            </ul>
-        </div>
-    </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page-aura page-aura-one"></div>
+    <div class="page-aura page-aura-two"></div>
 
-    <main id="articles-main" class="container" style="min-height: 70vh;">
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar" aria-label="Primary">
+                <a href="index.html" class="brand">
+                    <span class="brand-mark">SD</span>
+                    <span class="brand-copy">
+                        <span class="brand-eyebrow">AI Strategy</span>
+                        <span class="brand-name">Shake Dewan</span>
+                    </span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="case-studies.html" class="nav-link">Case Studies</a>
+                    <a href="resume.html" class="nav-link">Resume</a>
+                    <a href="articles.html" class="nav-link" aria-current="page">Articles</a>
+                    <a href="media.html" class="nav-link">Media</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="https://cal.com/shake-dewan/30min" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary btn-small">Book a Call</a>
+                    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"
+                        aria-label="Open navigation menu">
+                        <span>Menu</span>
+                        <span class="nav-toggle-bars" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div class="mobile-nav" id="mobile-nav" hidden>
+            <div class="mobile-nav-panel">
+                <div class="mobile-nav-links">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+                    <a href="resume.html" class="mobile-nav-link">Resume</a>
+                    <a href="articles.html" class="mobile-nav-link" aria-current="page">Articles</a>
+                    <a href="media.html" class="mobile-nav-link">Media</a>
+                </div>
+                <div class="mobile-nav-actions">
+                    <a href="https://cal.com/shake-dewan/30min" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary">Book a Call</a>
+                    <a href="https://www.linkedin.com/in/shake-the-ai-guy" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-secondary">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="section">
+            <div class="container page-hero-grid">
+                <div class="page-intro-card section-reveal active">
+                    <p class="eyebrow">Articles</p>
+                    <h1 class="page-title">Writing that goes deeper than the homepage can.</h1>
+                    <p class="lead">
+                        Essays on enterprise AI, systems thinking, delivery discipline, and the messy realities that
+                        separate a compelling demo from durable business change.
+                    </p>
+                </div>
+                <aside class="page-summary-card section-reveal delay-100 active">
+                    <p class="card-label">Why This Exists</p>
+                    <p class="section-copy">
+                        The writing should strengthen authority by showing how I think, not by repeating homepage copy.
+                    </p>
+                    <ul class="mini-list">
+                        <li>Enterprise AI and use-case selection</li>
+                        <li>Production systems and delivery discipline</li>
+                        <li>Operator-level views on strategy and adoption</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section tight">
+            <div class="container article-stack" id="articles-main"></div>
+        </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <span class="logo">SD.</span>
-                <p class="footer-copy">&copy; 2026 Shake Dewan. All rights reserved.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://cal.com/shake-dewan/30min" target="_blank" class="footer-link">Book a Call</a>
-                <a href="https://www.linkedin.com/in/shake-the-ai-guy" target="_blank" class="footer-link">LinkedIn</a>
+        <div class="container">
+            <div class="footer-cta">
+                <div>
+                    <p class="footer-title">Shake Dewan</p>
+                    <p class="footer-copy">
+                        Want the more concise version? The homepage and case studies carry the positioning and proof.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="resume.html">Resume</a>
+                    <a href="media.html">Media</a>
+                    <a href="https://www.linkedin.com/in/shake-the-ai-guy" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
             </div>
         </div>
     </footer>
 </body>
-
 </html>
