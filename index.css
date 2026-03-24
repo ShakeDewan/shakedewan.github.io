@@ -240,6 +240,18 @@ button { border: none; background: none; font-family: inherit; color: inherit; c
   content: "—"; position: absolute; left: 0; top: 0; color: var(--accent-gold);
 }
 
+/* Secondary Pages Stats Row & Hero */
+.hero { display: flex; flex-direction: column; justify-content: center; padding-top: 80px; padding-bottom: 40px; }
+.stats-row {
+  display: flex; gap: 80px; flex-wrap: wrap; margin: 40px 0 80px 0; 
+  border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); 
+  padding: 60px 0;
+}
+.stat-item { flex: 1; min-width: 150px; }
+.stat-number { font-size: 2.5rem; font-family: var(--font-display); color: var(--ink); margin-bottom: 8px; font-weight: 500;}
+.stat-label { color: var(--ink-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;}
+
+
 /* Footer */
 .footer {
   border-top: 1px solid rgba(255,255,255,0.05);
